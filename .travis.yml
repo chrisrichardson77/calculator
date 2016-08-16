@@ -2,7 +2,7 @@ before_install:
   - git clone https://github.com/google/googletest.git
   - mkdir googletest-build
   - cd googletest-build
-  - cmake ../google-test
+  - cmake ../googletest
   - make -j$(getconf _NPROCESSORS_ONLN)
   - sudo make install
 script:
