@@ -1,9 +1,10 @@
 before_install:
   - git clone https://github.com/google/googletest.git
   - mkdir googletest-build
-  - cd googletest-build
+  - pushd googletest-build
   - cmake ../googletest
   - make -j$(getconf _NPROCESSORS_ONLN)
   - sudo make install
+  - popd
 script:
   - mkdir build && cd build && cmake .. && make -j$(getconf _NPROCESSORS_ONLN) test
